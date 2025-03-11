@@ -69,5 +69,5 @@ def remove_product(product_name):
     else:
         print(f"Le produit {product_name} n'a pas été trouvé.")
         
-Supprimer_produit = input("Entrez le nom du produit que vous souhaitez supprimer : ")
-remove_product(Supprimer_produit)
+delete_product = input("Entrez le nom du produit que vous souhaitez supprimer : ")
+remove_product(delete_product)
