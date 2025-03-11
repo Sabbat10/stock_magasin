@@ -12,11 +12,11 @@ print("=" * 50)
 print("Liste des produits disponibles")
 
 # Afficher les produits
-
-for product in products:
-    print(f"{product['name']} - {product['price']} $ - {product['quantity']} en stock")
+def display_products():
+    for product in products:
+     print(f"{product['name']} - {product['price']} $ - {product['quantity']} en stock")
     
-
+display_products()
 # verifier si un produit est disponible
 def is_product_available(product_name):
     for product in products:
@@ -38,3 +38,21 @@ if is_product_available(rechercher_produit.lower()):
                 print(f"Le produit {rechercher_produit} n'est pas disponible")
 else:
     print(f"Le produit {rechercher_produit} n'est pas disponible")
+    
+    
+# ajouter un produit
+
+
+def add_product(product_name, product_price, product_quantity):
+    new_product = {"name": product_name, "price": product_price, "quantity": product_quantity}
+    products.append(new_product)
+    print(f"Le produit {product_name} a été ajouté avec succès.")
+    
+    
+Ajouter_produit = input("Entrez le nom du produit que vous souhaitez ajouter : ")
+Ajouter_prix = float(input("Entrez le prix du produit que vous souhaitez ajouter : "))
+Ajouter_quantite = int(input("Entrez la quantité du produit que vous souhaitez ajouter : "))
+
+add_product(Ajouter_produit, Ajouter_prix, Ajouter_quantite)
+
+display_products()
