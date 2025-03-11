@@ -46,7 +46,7 @@ else:
 def add_product(product_name, product_price, product_quantity):
     new_product = {"name": product_name, "price": product_price, "quantity": product_quantity}
     products.append(new_product)
-    print(f"Le produit {product_name} a été ajouté avec succès.")
+    print(f"== Le produit {product_name} a été ajouté avec succès. ==")
     
     
 Ajouter_produit = input("Entrez le nom du produit que vous souhaitez ajouter : ")
@@ -56,3 +56,18 @@ Ajouter_quantite = int(input("Entrez la quantité du produit que vous souhaitez
 add_product(Ajouter_produit, Ajouter_prix, Ajouter_quantite)
 
 display_products()
+
+# supprimer un produit
+
+def remove_product(product_name):
+    for product in products:
+        if product['name'] == product_name:
+            products.remove(product)
+            print(f"== Le produit {product_name} a été supprimé avec succès. ==")
+            display_products()
+            break
+    else:
+        print(f"Le produit {product_name} n'a pas été trouvé.")
+        
+Supprimer_produit = input("Entrez le nom du produit que vous souhaitez supprimer : ")
+remove_product(Supprimer_produit)
