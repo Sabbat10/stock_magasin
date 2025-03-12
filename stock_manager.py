@@ -45,19 +45,11 @@ def remove_product(product_name):
             products.remove(product)
             print("")
             print(f"== Le produit {product_name} a été supprimé avec succès. ==")
-            display_products()
+            print(display_products())
             break
     else:
         print(f"Le produit {product_name} n'a pas été trouvé.")
         
-
-# voir le rapport du stock
-
-# def rapport_stock():
-#     with open("rapport_stock.txt", "w") as f:
-#         content = f.read
-#         content = display_products()
-#         print(f"Le rapport de stock a été enregistré avec succès. Le fichier est disponible dans le dossier du programme. {content}")
 
 def rapport_stock():
     with open("rapport_stock.txt", "w") as f:
