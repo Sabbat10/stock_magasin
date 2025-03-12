@@ -43,6 +43,7 @@ def remove_product(product_name):
     for product in products:
         if product['name'] == product_name:
             products.remove(product)
+            print("")
             print(f"== Le produit {product_name} a été supprimé avec succès. ==")
             display_products()
             break
