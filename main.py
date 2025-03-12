@@ -13,10 +13,17 @@ while True:
     # ajouter un produit
     elif choice_operation == "2":
         Ajouter_produit = input("Entrez le nom du produit que vous souhaitez ajouter : ")
-        Ajouter_prix = float(input("Entrez le prix du produit que vous souhaitez ajouter : "))
-        Ajouter_quantite = int(input("Entrez la quantité du produit que vous souhaitez ajouter : "))
+        while True:
+            try:
+            
+                Ajouter_prix = float(input("Entrez le prix du produit que vous souhaitez ajouter : "))
+                Ajouter_quantite = int(input("Entrez la quantité du produit que vous souhaitez ajouter : "))
+                break
+            except ValueError:
+                print("")
+                print("Veuillez entrer des valeurs numériques pour le prix et la quantité.")
 
-        add_product(Ajouter_produit, Ajouter_prix, Ajouter_quantite)
+        add_product(Ajouter_produit.lower(), Ajouter_prix, Ajouter_quantite)
 
     # supprimer un produit
     elif choice_operation == "3":
