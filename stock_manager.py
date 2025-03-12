@@ -10,12 +10,12 @@ products = [
 ]
 
 print("=" * 50)
-print("GESTIONS DE MAGASIN")
+print("GESTIONS DE MAGASIN 🏪")
 print("Taper : ")
 
 # Afficher les produits
 def display_products():
-    print("Voici la liste des produits disponibles :")
+    print("Voici la liste des produits disponibles 📋:")
     headers = {
         "name": "Nom",
         "price": "Prix ($)",
@@ -34,7 +34,7 @@ def is_product_available(product_name):
 def add_product(product_name, product_price, product_quantity):
     new_product = {"name": product_name, "price": product_price, "quantity": product_quantity}
     products.append(new_product)
-    print(f"== Le produit {product_name} a été ajouté avec succès. ==")
+    print(f"== Le produit {product_name} a été ajouté avec succès ✅. ==")
     print(display_products())
 
 # supprimer un produit
@@ -44,16 +44,16 @@ def remove_product(product_name):
         if product['name'] == product_name:
             products.remove(product)
             print("")
-            print(f"== Le produit {product_name} a été supprimé avec succès. ==")
+            print(f"== Le produit {product_name} a été supprimé avec succès 🗑️. ==")
             print(display_products())
             break
     else:
-        print(f"Le produit {product_name} n'a pas été trouvé.")
+        print(f"Le produit {product_name} n'a pas été trouvé ❌.")
         
 
 def rapport_stock():
     with open("rapport_stock.txt", "w") as f:
         content = display_products()
         f.write(content)
-        print("Le rapport de stock a été enregistré avec succès. Le fichier est disponible dans le dossier du programme.")
+        print("Le rapport de stock a été enregistré avec succès 📄. Le fichier est disponible dans le dossier du programme.")
         print("")
