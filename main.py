@@ -4,6 +4,8 @@ from stock_manager import *
 while True:
     choice_operation = input("1 - voir les produits\n2 - ajouter un produit\n3 - supprimer un produit\n4 - rechercher un produit\n5 - quitter\n:")
     
+    print("")
+    
     # afficher produit
     if choice_operation == "1":
         display_products()
@@ -29,9 +31,16 @@ while True:
             if rechercher_produit.lower() in [product['name'] for product in products]:
                 for product in products:
                     if product['name'] == rechercher_produit.lower():
+                        print("")
                         print(f"== Le produit {rechercher_produit.upper()} est disponible ==")
-                        print(f"Prix : {product['price']} $")
-                        print(f"Quantité : {product['quantity']} en stock")
+                        # print(f"Prix : {product['price']} $")
+                        # print(f"Quantité : {product['quantity']} en stock")
+                        headers = {
+                            "name": "Nom",
+                            "price": "Prix ($)",
+                            "quantity": "Quantité"
+                        }
+                        print(tabulate([product], headers=headers, tablefmt="grid"))
                         break
                     else:
                         print(f"Le produit {rechercher_produit} n'est pas disponible")
