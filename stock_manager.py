@@ -21,7 +21,7 @@ def display_products():
         "price": "Prix ($)",
         "quantity": "Quantité"
     }
-    print(tabulate(products, headers=headers, tablefmt="grid"))
+    return(tabulate(products, headers=headers, tablefmt="grid"))
 
 # verifier si un produit est disponible
 def is_product_available(product_name):
@@ -35,7 +35,7 @@ def add_product(product_name, product_price, product_quantity):
     new_product = {"name": product_name, "price": product_price, "quantity": product_quantity}
     products.append(new_product)
     print(f"== Le produit {product_name} a été ajouté avec succès. ==")
-    display_products()
+    print(display_products())
 
 # supprimer un produit
 
@@ -50,3 +50,18 @@ def remove_product(product_name):
     else:
         print(f"Le produit {product_name} n'a pas été trouvé.")
         
+
+# voir le rapport du stock
+
+# def rapport_stock():
+#     with open("rapport_stock.txt", "w") as f:
+#         content = f.read
+#         content = display_products()
+#         print(f"Le rapport de stock a été enregistré avec succès. Le fichier est disponible dans le dossier du programme. {content}")
+
+def rapport_stock():
+    with open("rapport_stock.txt", "w") as f:
+        content = display_products()
+        f.write(content)
+        print("Le rapport de stock a été enregistré avec succès. Le fichier est disponible dans le dossier du programme.")
+        print("")

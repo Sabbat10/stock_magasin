@@ -2,13 +2,13 @@
 from stock_manager import *
 
 while True:
-    choice_operation = input("1 - voir les produits\n2 - ajouter un produit\n3 - supprimer un produit\n4 - rechercher un produit\n5 - quitter\n:")
+    choice_operation = input("1 - voir les produits\n2 - ajouter un produit\n3 - supprimer un produit\n4 - rechercher un produit\n5 - imprimer le rapport du stock\n6 - quitter le programme\nEntrez votre choix :")
     
     print("")
     
     # afficher produit
     if choice_operation == "1":
-        display_products()
+      print(display_products())
         
     # ajouter un produit
     elif choice_operation == "2":
@@ -54,7 +54,11 @@ while True:
         else:
             print(f"Le produit {rechercher_produit} n'est pas disponible")
             
-    # quitter le programme
+    # imprimer le rapport du stock
     elif choice_operation == "5":
+        rapport_stock()
+            
+    # quitter le programme
+    elif choice_operation == "6":
         print("Fin du programme")
         break
